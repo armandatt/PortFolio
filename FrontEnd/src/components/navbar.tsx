@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 // import ThemeToggle from "@/components/theme-toggle"
-import { Leaf } from "lucide-react"
+import { Menu, X, Leaf } from "lucide-react"
 import { useMobile } from "@/hooks/use-mobile"
 
 export default function Navbar() {
@@ -40,8 +40,8 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-[#283110]/70 dark:bg-jungle-900/70 backdrop-blur-lg shadow-sm"
-          : "bg-transparent"
+            ? "bg-[#283110]/70 dark:bg-jungle-900/70 backdrop-blur-lg shadow-sm"
+            : "bg-transparent"
           }`}
       >
         <div className="max-w-8xl mx-auto px-16 my-1">
@@ -67,6 +67,17 @@ export default function Navbar() {
                 </Button>
               ))}
             </nav>
+
+            {/* Mobile Navigation Toggle */}
+            <div className="flex items-center md:hidden gap-2">
+              <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+                {isMenuOpen ? (
+                  <X className="h-6 w-6 text-slate-800 dark:text-white" />
+                ) : (
+                  <Menu className="h-6 w-6 text-slate-800 dark:text-white" />
+                )}
+              </Button>
+            </div>
           </div>
         </div>
       </header>

@@ -69,7 +69,9 @@ export default function Contact() {
             Have a project in mind or want to discuss how I can help your business grow?
             Let's explore the possibilities together!
           </p>
-          <div className="h-1 w-20 bg-emerald-400 mx-auto mt-6"></div>
+          <div className="flex justify-center mt-4">
+            <div className="h-[5px] w-[100px] bg-[#7e9e3e] rounded-sm"></div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">

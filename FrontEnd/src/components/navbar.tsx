@@ -85,7 +85,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && isMobile && (
-        <div className="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-sm">
+        <div className="fixed inset-0 z-40 bg-[#1f2417] backdrop-blur-sm">
           <div className="flex flex-col h-full">
             {/* Menu Content */}
             <div className="flex-1 pt-20 px-6">
@@ -106,7 +106,7 @@ export default function Navbar() {
                           setIsMenuOpen(false);
                         }}
                         className="w-full text-left py-4 px-6 rounded-xl
-                           text-xl font-medium text-white 
+                           text-xl font-medium text-[#b5c67b] 
                            hover:text-green-400 hover:bg-slate-800/50 
                            transition-all duration-200 
                            border-l-4 border-transparent hover:border-green-400
@@ -125,7 +125,7 @@ export default function Navbar() {
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="w-full py-3 px-6 rounded-lg
-                   text-slate-300 hover:text-white
+                   text-[#b5c67b] hover:text-white
                    border border-slate-600 hover:border-green-400
                    hover:bg-slate-800/50 transition-all duration-200
                    font-medium"

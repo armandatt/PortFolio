@@ -39,11 +39,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-[#283110]/70 dark:bg-jungle-900/70 backdrop-blur-lg shadow-sm" 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+            ? "bg-[#283110]/70 dark:bg-jungle-900/70 backdrop-blur-lg shadow-sm"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-8xl mx-auto px-16 my-1">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -86,19 +85,55 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && isMobile && (
-        <div className="fixed inset-0 z-40 dark:bg-jungle-900/95 pt-16">
-          <nav className="container mx-auto px-4 py-8 flex flex-col gap-4">
-            {navItems.map((item) => (
-              <Button
-                key={item.name}
-                variant="ghost"
-                onClick={() => scrollToSection(item.href)}
-                className="w-full justify-start text-lg py-4 text-slate-800 dark:text-white"
+        <div className="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-sm">
+          <div className="flex flex-col h-full">
+            {/* Menu Content */}
+            <div className="flex-1 pt-20 px-6">
+              <nav className="max-w-sm mx-auto">
+                <div className="space-y-1">
+                  {navItems.map((item, index) => (
+                    <div
+                      key={item.name}
+                      className="transform transition-all duration-300"
+                      style={{
+                        animationDelay: `${index * 100}ms`,
+                        animation: isMenuOpen ? 'slideInFromRight 0.4s ease-out forwards' : ''
+                      }}
+                    >
+                      <button
+                        onClick={() => {
+                          scrollToSection(item.href);
+                          setIsMenuOpen(false);
+                        }}
+                        className="w-full text-left py-4 px-6 rounded-xl
+                           text-xl font-medium text-white 
+                           hover:text-green-400 hover:bg-slate-800/50 
+                           transition-all duration-200 
+                           border-l-4 border-transparent hover:border-green-400
+                           active:scale-95"
+                      >
+                        {item.name}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </nav>
+            </div>
+
+            {/* Bottom Section */}
+            <div className="p-6 border-t border-slate-700/50">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full py-3 px-6 rounded-lg
+                   text-slate-300 hover:text-white
+                   border border-slate-600 hover:border-green-400
+                   hover:bg-slate-800/50 transition-all duration-200
+                   font-medium"
               >
-                {item.name}
-              </Button>
-            ))}
-          </nav>
+                ✕ Close Menu
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </>

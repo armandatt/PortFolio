@@ -130,3 +130,35 @@ html {
   animation: bounce 1s infinite;
 }
 
+/* Add this to your CSS file for mobile menu animations */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Optional: Add this for better mobile menu styling */
+.mobile-menu-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.1), transparent);
+  transition: width 0.3s ease;
+}
+
+.mobile-menu-item:hover::before {
+  width: 100%;
+}

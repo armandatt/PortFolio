@@ -1,8 +1,8 @@
 "use client"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import ThemeToggle from "@/components/theme-toggle"
-import { Menu, X, Leaf } from "lucide-react"
+// import ThemeToggle from "@/components/theme-toggle"
+import { Leaf } from "lucide-react"
 import { useMobile } from "@/hooks/use-mobile"
 
 export default function Navbar() {

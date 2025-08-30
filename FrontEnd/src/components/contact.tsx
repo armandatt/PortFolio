@@ -18,33 +18,33 @@ export default function Contact() {
   }
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-    return
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const res = await fetch('https://backend.dattarman63.workers.dev/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) throw new Error('Failed to send')
+
+      setSubmitted(true)
+      setFormData({ name: "", email: "", message: "" })
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch (err) {
+      console.error('Submission failed:', err)
+      alert('Something went wrong. Please try again.')
+    }
+
+    setIsSubmitting(false)
   }
-
-  setIsSubmitting(true)
-
-  try {
-    const res = await fetch('https://backend.dattarman63.workers.dev/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    })
-
-    if (!res.ok) throw new Error('Failed to send')
-
-    setSubmitted(true)
-    setFormData({ name: "", email: "", message: "" })
-    setTimeout(() => setSubmitted(false), 5000)
-  } catch (err) {
-    console.error('Submission failed:', err)
-    alert('Something went wrong. Please try again.')
-  }
-
-  setIsSubmitting(false)
-}
 
   return (
     <section id="contact" className="py-20 bg-[#0e1515] relative">
@@ -60,11 +60,11 @@ export default function Contact() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <Leaf className="h-6 w-6 text-[#b5c67b]" />
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <Leaf className="h-6 w-6 text-[#b5c67b]" />
             Get In Touch
+            <Leaf className="h-6 w-6 text-[#b5c67b]" />
           </h2>
-          <Leaf className="h-6 w-6 text-[#b5c67b]" />
           <p className="text-lg text-emerald-100 max-w-2xl mx-auto leading-relaxed">
             Have a project in mind or want to discuss how I can help your business grow?
             Let's explore the possibilities together!

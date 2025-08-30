@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Github, Linkedin, FileText, Send, MapPin } from "lucide-react"
+import { Mail, Github, Linkedin, FileText, Send, MapPin, Leaf } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -60,9 +60,11 @@ export default function Contact() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
+          <Leaf className="h-6 w-6 text-[#b5c67b]" />
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Get In Touch
           </h2>
+          <Leaf className="h-6 w-6 text-[#b5c67b]" />
           <p className="text-lg text-emerald-100 max-w-2xl mx-auto leading-relaxed">
             Have a project in mind or want to discuss how I can help your business grow?
             Let's explore the possibilities together!

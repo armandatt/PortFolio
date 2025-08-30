@@ -23,7 +23,7 @@ export default function Footer() {
               <p className="text-lg font-semibold flex items-center">
                 Arman Datt <Leaf className="h-4 w-4 ml-1 text-jungle-400" />
               </p>
-              <p className="text-sm text-[#b5c67b]">Django Jungle Explorer</p>
+              <p className="text-sm text-[#b5c67b]">Mern Jungle Explorer</p>
             </div>
           </div>
 

@@ -86,7 +86,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && isMobile && (
-        <div className="fixed inset-0 z-40 bg-white dark:bg-jungle-900/95 pt-16">
+        <div className="fixed inset-0 z-40 dark:bg-jungle-900/95 pt-16">
           <nav className="container mx-auto px-4 py-8 flex flex-col gap-4">
             {navItems.map((item) => (
               <Button

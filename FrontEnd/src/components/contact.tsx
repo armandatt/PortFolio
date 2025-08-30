@@ -60,7 +60,7 @@ export default function Contact() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-4xl font-bold text-white mb-4 flex items-center justify-center gap-2">
             <Leaf className="h-6 w-6 text-[#b5c67b]" />
             Get In Touch
             <Leaf className="h-6 w-6 text-[#b5c67b]" />
